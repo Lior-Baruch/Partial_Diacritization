@@ -1,3 +1,5 @@
 data/
 AlephBert-main/
 notes.txt
+token_ids.csv
+token_ids.json
