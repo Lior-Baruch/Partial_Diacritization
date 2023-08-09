@@ -3,5 +3,5 @@ AlephBert-main/
 notes.txt
 token_ids.csv
 token_ids.json
-lstm_model_10_epoch_loss_history.pkl
-lstm_model_10_epoch.pt
+directional_model_10_epoch.pt
+directional_model_10_epoch_loss_history.pkl
