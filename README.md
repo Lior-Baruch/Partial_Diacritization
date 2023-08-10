@@ -1,56 +1,52 @@
 # **Punctuation Restoration in Hebrew: A Dual Model Approach**
 
-This Jupyter notebook, a continuation of the research carried out at Reichman University by Lior Baruch and Ben Catalan, offers a sophisticated strategy for Hebrew punctuation (or "nikud") restoration. Drawing inspiration from the paper "How Much Does Lookahead Matter for Disambiguation? Partial Arabic Diacritization Case Study", this notebook adapts the principles to Hebrew, synergizing two distinct models - a Transformer and an LSTM. The culmination of this effort is to achieve optimal nikud placement, enhancing both readability and comprehension. This work was undertaken as part of the NLP course guided by Kfir Bar.
+Hello, we're Lior Baruch and Ben Catalan from Reichman University. In this Jupyter notebook, we present a sophisticated strategy for Hebrew punctuation (or "nikud") restoration. Drawing inspiration from the paper "How Much Does Lookahead Matter for Disambiguation? Partial Arabic Diacritization Case Study", we adapted the principles to Hebrew, utilizing two distinct models - a Transformer and an LSTM. Our objective is to achieve optimal nikud placement, ensuring both readability and comprehension. This work was part of the NLP course supervised by Kfir Bar.
 
 ## **Overview**
 
-Traditional full nikud on every word in Hebrew can create a dense text layout, impeding smooth reading. To address this, the dual-model approach in this notebook strikes a balance: it provides sufficient punctuation for clarity while ensuring that the text remains effortlessly readable. This balance is achieved by focusing on ambiguous characters, which truly require nikud for disambiguation, and by leveraging the complementary strengths of both the Transformer and LSTM models.
+We noticed that the traditional full nikud on every Hebrew word often results in a dense text layout, making reading a challenge. To address this, we designed a dual-model approach aiming to strike a balance: providing sufficient punctuation for clarity without overwhelming the text. By focusing on ambiguous characters that truly benefit from nikud for disambiguation, and leveraging the combined strengths of both the Transformer and LSTM models, we believe we've achieved this balance.
 
 ## **Table of Contents:**
 
 1. **Initialization and Setup**
-    - Necessary pip installations.
-    - Importing essential libraries.
+    - Pip installations we found necessary.
+    - Libraries we used extensively.
     - Setting up seeds for reproducibility.
   
 2. **Data Preprocessing**
-    - Loading and extracting data with vowels and punctuations.
-    - Efficiently downloading and organizing files.
-    - Creating a dictionary with authors as keys and their corresponding files as values.
-    - A comprehensive suite of functions for data cleaning and preprocessing.
-    - Compilation of sentences into a unified CSV.
+    - Loading and extracting relevant data.
+    - Efficient methods for downloading and organizing files.
+    - Our approach to categorizing data by author.
+    - Comprehensive data cleaning and preprocessing functions we developed.
+    - Compiling sentences into a unified CSV.
 
 3. **Data Exploration and Analysis**
-    - Constructing label-to-ID mappings.
+    - Building label-to-ID mappings.
     - Calculating label weights.
-    - Comprehensive Exploratory Data Analysis (EDA) to understand the dataset's nuances.
+    - Detailed Exploratory Data Analysis (EDA) to understand the dataset's nuances.
 
 4. **Data Preparation for Model Training**
-    - Definition and implementation of a custom DataSet class.
-    - Acquiring the tokenizer and a base pre-trained model (`alephbert-base`).
-    - Segregating data into training, validation, and test subsets with corresponding data loaders.
-    - Further EDA to ensure data readiness.
+    - Implementing a custom DataSet class.
+    - Incorporating the tokenizer and a base pre-trained model (`alephbert-base`).
+    - Dividing data into training, validation, and test subsets.
+    - Additional EDA to confirm data readiness.
 
 5. **Model Architecture and Training**
-    - Introduction of two main models:
+    - Introduction to our two main models:
         - **Full-Sentence Model (Transformer with lookahead)**
         - **Reading-Direction Model (LSTM without lookahead)**
-    - Detailed training dynamics for both models.
+    - Our approach to training both models.
 
 6. **Model Evaluation and Analysis**
-    - Rigorous evaluation using a variety of metrics.
+    - Evaluating the models using diverse metrics.
     - In-depth analysis functions for:
         - Full Sentence Model
         - Reading Direction Model
 
 7. **Optimal Dual Model Strategy**
-    - The dual model that integrates predictions from both primary models.
-    - In situations of disagreement between the two core models, predictions from the Transformer, which considers the entire sentence context, are prioritized.
+    - Our dual model that combines predictions from both primary models.
+    - In cases of disagreement, we prioritized the Transformer's predictions, which consider the entire sentence context.
 
 ## **Conclusion**
 
-This notebook offers a novel approach to punctuation restoration in Hebrew. By concentrating on ambiguous characters and judiciously placing nikud only where it's essential for understanding, the dual-model strategy achieves a balance between clarity and readability. It stands as a significant contribution to Hebrew text processing in the realm of NLP.
-
---- 
-
-Please review the integrated README and let me know if any further adjustments or additions are needed.
+We believe this notebook offers a groundbreaking approach to punctuation restoration in Hebrew. By focusing on the right characters and judiciously placing nikud, our dual-model strategy strikes the perfect balance between clarity and readability. We're proud of this contribution to Hebrew text processing in the realm of NLP.
