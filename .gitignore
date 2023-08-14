@@ -5,3 +5,4 @@ token_ids.csv
 token_ids.json
 directional_model_10_epoch.pt
 directional_model_10_epoch_loss_history.pkl
+saved_models_and_his/
