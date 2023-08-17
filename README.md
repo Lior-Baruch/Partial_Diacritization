@@ -1,4 +1,5 @@
 # **Punctuation Restoration in Hebrew: A Dual Model Approach**
+(not done yet, will be completed in the next couple of days)
 
 Hello, we're Lior Baruch and Ben Catalan from Reichman University. In this Jupyter notebook, we present a sophisticated strategy for Hebrew punctuation (or "nikud") restoration. Drawing inspiration from the paper "How Much Does Lookahead Matter for Disambiguation? Partial Arabic Diacritization Case Study", we adapted the principles to Hebrew, utilizing two distinct models - a Transformer and an LSTM. Our objective is to achieve optimal nikud placement, ensuring both readability and comprehension. This work was part of the NLP course supervised by Kfir Bar.
 
