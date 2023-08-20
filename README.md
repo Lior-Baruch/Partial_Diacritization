@@ -1,53 +1,37 @@
-# **Punctuation Restoration in Hebrew: A Dual Model Approach**
-(not done yet, will be completed in the next couple of days)
+# Partial Diacritization in Hebrew: A Dual Model Approach for Text Disambiguation
 
-Hello, we're Lior Baruch and Ben Catalan from Reichman University. In this Jupyter notebook, we present a sophisticated strategy for Hebrew punctuation (or "nikud") restoration. Drawing inspiration from the paper "How Much Does Lookahead Matter for Disambiguation? Partial Arabic Diacritization Case Study", we adapted the principles to Hebrew, utilizing two distinct models - a Transformer and an LSTM. Our objective is to achieve optimal nikud placement, ensuring both readability and comprehension. This work was part of the NLP course supervised by Kfir Bar.
+## Introduction
 
-## **Overview**
+This repository details the work of Lior Baruch and Ben Catalan from Reichman University on applying partial diacritization to Hebrew text. The project involves the development of two distinct models—one with lookahead and one without—to predict diacritization. Additionally, a dual model approach provides partial diacritization only when the two models disagree, favoring the lookahead model's prediction. The project is inspired by the paper "How Much Does Lookahead Matter for Disambiguation? Partial Arabic Diacritization Case Study" by Saeed Esmail, Kfir Bar, and Nachum Dershowitz.
 
-We noticed that the traditional full nikud on every Hebrew word often results in a dense text layout, making reading a challenge. To address this, we designed a dual-model approach aiming to strike a balance: providing sufficient punctuation for clarity without overwhelming the text. By focusing on ambiguous characters that truly benefit from nikud for disambiguation, and leveraging the combined strengths of both the Transformer and LSTM models, we believe we've achieved this balance.
+## Repository Contents
 
-## **Table of Contents:**
+### AlephBERT-main/AlephBERT-main
+- **Modified AlephBERT**: This folder contains a modified version of the AlephBERT model, tailored to our specific requirements, including changes in vocabulary as described in the paper.
 
-1. **Initialization and Setup**
-    - Pip installations we found necessary.
-    - Libraries we used extensively.
-    - Setting up seeds for reproducibility.
-  
-2. **Data Preprocessing**
-    - Loading and extracting relevant data.
-    - Efficient methods for downloading and organizing files.
-    - Our approach to categorizing data by author.
-    - Comprehensive data cleaning and preprocessing functions we developed.
-    - Compiling sentences into a unified CSV.
+### data
+- **Dicta Books JSON**: The `books.json` file in this directory contains the JSON used to download the Dicta books dataset, essential for training and testing the models.
 
-3. **Data Exploration and Analysis**
-    - Building label-to-ID mappings.
-    - Calculating label weights.
-    - Detailed Exploratory Data Analysis (EDA) to understand the dataset's nuances.
+### full-sentence-final-models
+- **Full-Sentence Models (With Lookahead)**: This folder holds the saved final models for the Full-Sentence approach, which considers the entire sentence context, including loss and accuracy history for each epoch.
 
-4. **Data Preparation for Model Training**
-    - Implementing a custom DataSet class.
-    - Incorporating the tokenizer and a base pre-trained model (`alephbert-base`).
-    - Dividing data into training, validation, and test subsets.
-    - Additional EDA to confirm data readiness.
+### reading-direction-final-models
+- **Reading Direction Models (Without Lookahead)**: Here, you will find the saved final models for the Reading Direction approach, which emulates natural human reading patterns, along with loss and accuracy history for each epoch.
 
-5. **Model Architecture and Training**
-    - Introduction to our two main models:
-        - **Full-Sentence Model (Transformer with lookahead)**
-        - **Reading-Direction Model (LSTM without lookahead)**
-    - Our approach to training both models.
+### plots
+- **Visualizations**: This directory houses various plots related to the project, including confusion matrices and loss/accuracy histories.
 
-6. **Model Evaluation and Analysis**
-    - Evaluating the models using diverse metrics.
-    - In-depth analysis functions for:
-        - Full Sentence Model
-        - Reading Direction Model
+### Additional Files
+- **Partial_Dicritization_DualModel_LSTM.ipynb**: The main Jupyter notebook containing all the code, including the two main models, dual model strategy, grid search, training, and evaluation.
+- **transformer_attempt.ipynb**: A notebook detailing our attempts with the Transformer architecture.
+- **From Arabic to Hebrew - Looking Ahead So We Dont Fall Behind in Diacritization.pdf**: The research paper detailing our methodology, experiments, and results.
+- **.gitignore**: A file specifying untracked files that Git should ignore.
+- **README.md**: This file, providing an overview of the repository.
 
-7. **Optimal Dual Model Strategy**
-    - Our dual model that combines predictions from both primary models.
-    - In cases of disagreement, we prioritized the Transformer's predictions, which consider the entire sentence context.
+## Conclusion
 
-## **Conclusion**
+Our dual-model strategy for partial diacritization in Hebrew represents a groundbreaking approach to text disambiguation. By leveraging the synergy between a lookahead model and a reading-direction model, we have achieved a balanced and effective solution for Hebrew text processing.
 
-We believe this notebook offers a groundbreaking approach to punctuation restoration in Hebrew. By focusing on the right characters and judiciously placing nikud, our dual-model strategy strikes the perfect balance between clarity and readability. We're proud of this contribution to Hebrew text processing in the realm of NLP.
+## Contact and Acknowledgments
+
+For further inquiries, collaboration, or information, please contact the authors. This project was conducted as part of an NLP course supervised by Kfir Bar at Reichman University.
